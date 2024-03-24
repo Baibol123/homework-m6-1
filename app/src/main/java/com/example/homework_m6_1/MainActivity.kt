@@ -7,17 +7,15 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.homework_m6_1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-//    private val viewModel: MainViewModel by lazy {
-//        ViewModelProvider(this)[MainViewModel::class.java]
-//    }
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(this)[MainViewModel::class.java]
+    }
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         init()
         observeViewModel()
     }
